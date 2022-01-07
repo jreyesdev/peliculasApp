@@ -2,6 +2,14 @@
   "name": "peliculasapp",
   "version": "0.0.1",
   "private": true,
+  "author": {
+    "name": "Jesús Reyes",
+    "email": "djrm1204@gmail.com",
+    "url": "https://github.com/jreyesdev"
+  },
+  "repository": {
+    "url": "https://github.com/jreyesdev/peliculasApp.git"
+  },
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -10,8 +18,13 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@react-navigation/native": "^6.0.6",
+    "@react-navigation/stack": "^6.0.11",
     "react": "17.0.2",
-    "react-native": "0.66.3"
+    "react-native": "0.66.3",
+    "react-native-gesture-handler": "^2.1.0",
+    "react-native-safe-area-context": "^3.3.2",
+    "react-native-screens": "^3.10.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
