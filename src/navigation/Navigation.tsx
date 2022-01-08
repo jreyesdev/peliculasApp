@@ -3,8 +3,14 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import HomeScreen from '../screens/HomeScreen';
 import DetailScreen from '../screens/DetailScreen';
+import {Movie} from '../interfaces/MovieDBInterface';
 
-const Stack = createStackNavigator();
+export type RouteStackParams = {
+  HomeScreen: undefined;
+  DetailScreen: Movie;
+};
+
+const Stack = createStackNavigator<RouteStackParams>();
 
 function Navigation() {
   return (
