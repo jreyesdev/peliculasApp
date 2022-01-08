@@ -4,11 +4,18 @@ import {Movie} from '../interfaces/MovieDBInterface';
 
 interface Props {
   movie: Movie;
+  height?: number;
+  width?: number;
 }
 
-export const MoviePoster = ({movie}: Props) => {
+const MoviePoster = ({movie, height = 420, width = 300}: Props) => {
   return (
-    <View style={styles.container}>
+    <View
+      style={{
+        ...styles.container,
+        width,
+        height,
+      }}>
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
@@ -23,8 +30,7 @@ export const MoviePoster = ({movie}: Props) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: 300,
-    height: 420,
+    marginHorizontal: 8,
   },
   imageContainer: {
     flex: 1,
@@ -43,3 +49,5 @@ const styles = StyleSheet.create({
     borderRadius: 18,
   },
 });
+
+export default MoviePoster;
