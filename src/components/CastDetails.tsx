@@ -33,8 +33,9 @@ const s = StyleSheet.create({
     marginBottom: 0,
   },
   title: {
-    fontSize: 25,
+    fontSize: 18,
     fontWeight: 'bold',
+    color: 'black',
   },
 });
 

@@ -49,11 +49,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   title: {
-    fontSize: 25,
+    fontSize: 18,
     fontWeight: 'bold',
+    color: 'black',
   },
   texto: {
-    fontSize: 16,
+    fontSize: 15,
     textAlign: 'justify',
     paddingHorizontal: 10,
   },
