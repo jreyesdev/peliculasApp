@@ -1,7 +1,9 @@
 import React from 'react';
 import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
 import {Movie} from '../interfaces/MovieDBInterface';
+import {RouteStackParams} from '../navigation/Navigation';
 
 interface Props {
   movie: Movie;
@@ -9,8 +11,10 @@ interface Props {
   width?: number;
 }
 
+type HomeScreenNavigation = StackNavigationProp<RouteStackParams, 'HomeScreen'>;
+
 const MoviePoster = ({movie, height = 420, width = 280}: Props) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<HomeScreenNavigation>();
 
   const detailMovie = () => {
     navigation.navigate('DetailScreen', movie);
