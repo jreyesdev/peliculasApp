@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {Dimensions, ScrollView, StyleSheet, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Carousel from 'react-native-snap-carousel';
@@ -17,6 +17,13 @@ const HomeScreen = () => {
   const {top} = useSafeAreaInsets();
   const {loading, nowPlaying, popular, topRated, upComing} = useMovies();
   const {setCurrentColors} = useContext(GradientContext);
+
+  useEffect(() => {
+    if (nowPlaying.length > 0) {
+      getColorPoster(0);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const getColorPoster = async (index: number) => {
     const uri = `https://image.tmdb.org/t/p/w500${nowPlaying[index].poster_path}`;
