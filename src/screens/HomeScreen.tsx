@@ -23,7 +23,7 @@ const HomeScreen = () => {
       getColorPoster(0);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [nowPlaying]);
 
   const getColorPoster = async (index: number) => {
     const uri = `https://image.tmdb.org/t/p/w500${nowPlaying[index].poster_path}`;
