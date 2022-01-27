@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
     marginVertical: 15,
     fontSize: 20,
     fontWeight: 'bold',
+    color: 'black',
   },
 });
 
