@@ -1,6 +1,5 @@
 import React, {useContext, useEffect} from 'react';
 import {Dimensions, ScrollView, StyleSheet, View} from 'react-native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Carousel from 'react-native-snap-carousel';
 
 import GradientBackground from '../components/GradientBackground';
@@ -14,7 +13,6 @@ import {useMovies} from '../hooks/useMovies';
 const {width: windowWidth} = Dimensions.get('window');
 
 const HomeScreen = () => {
-  const {top} = useSafeAreaInsets();
   const {loading, nowPlaying, popular, topRated, upComing} = useMovies();
   const {setCurrentColors} = useContext(GradientContext);
 
@@ -36,13 +34,9 @@ const HomeScreen = () => {
   }
 
   return (
-    <GradientBackground>
-      <ScrollView>
-        <View
-          style={{
-            ...styles.container,
-            marginTop: top + 10,
-          }}>
+    <ScrollView>
+      <View style={styles.container}>
+        <GradientBackground>
           <View style={styles.carouselContainer}>
             <Carousel
               data={nowPlaying}
@@ -53,21 +47,20 @@ const HomeScreen = () => {
               onSnapToItem={index => getColorPoster(index)}
             />
           </View>
-          <HorizontalSlider title="Popular" movies={popular} />
-          <HorizontalSlider title="Top Rated" movies={topRated} />
-          <HorizontalSlider title="Up comming" movies={upComing} />
-        </View>
-      </ScrollView>
-    </GradientBackground>
+        </GradientBackground>
+        <HorizontalSlider title="Popular" movies={popular} />
+        <HorizontalSlider title="Top Rated" movies={topRated} />
+        <HorizontalSlider title="Up comming" movies={upComing} />
+      </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    marginTop: 10,
-  },
+  container: {},
   carouselContainer: {
     height: 440,
+    paddingTop: 15,
   },
 });
 
