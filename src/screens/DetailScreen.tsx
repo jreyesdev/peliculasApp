@@ -44,8 +44,14 @@ const DetailScreen = ({route, navigation}: Props) => {
         <Text style={styles.title}>{movie.title}</Text>
         <Text style={styles.subtitle}>{movie.original_title}</Text>
       </View>
-      {loading ? <LoadingSpin /> : <MovieDetails movieFull={movieFull!} />}
-      {loading ? <LoadingSpin /> : <CastDetails actores={cast} />}
+      {loading ? (
+        <LoadingSpin />
+      ) : (
+        <View>
+          <MovieDetails movieFull={movieFull!} />
+          <CastDetails actores={cast} />
+        </View>
+      )}
     </ScrollView>
   );
 };

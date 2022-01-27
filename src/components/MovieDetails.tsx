@@ -10,6 +10,7 @@ interface Props {
 }
 
 const MovieDetails = ({movieFull}: Props) => {
+  const fecha = new Date(movieFull.release_date);
   return (
     <View style={styles.container}>
       <View style={styles.ratingCont}>
@@ -33,6 +34,10 @@ const MovieDetails = ({movieFull}: Props) => {
           {Currency.format(movieFull.revenue, {code: 'USD'})}
         </Text>
       </View>
+      <View style={styles.sectionCont}>
+        <Text style={styles.title}>Estreno</Text>
+        <Text style={styles.texto}>{fecha.toLocaleDateString()}</Text>
+      </View>
     </View>
   );
 };
@@ -47,6 +52,8 @@ const styles = StyleSheet.create({
   ratingCont: {
     marginBottom: 15,
     flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
   },
   title: {
     fontSize: 18,
