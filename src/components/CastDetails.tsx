@@ -11,7 +11,7 @@ const CastDetails = ({actores}: Props) => {
   return (
     <View style={s.container}>
       <View style={s.sectionCont}>
-        <Text style={s.title}>Actores</Text>
+        <Text style={s.title}>Reparto</Text>
       </View>
       <FlatList
         data={actores}
@@ -26,10 +26,10 @@ const CastDetails = ({actores}: Props) => {
 
 const s = StyleSheet.create({
   container: {
-    paddingHorizontal: 15,
     marginBottom: 20,
   },
   sectionCont: {
+    paddingHorizontal: 15,
     marginBottom: 0,
   },
   title: {

@@ -32,7 +32,7 @@ const CastCard = ({actor}: Props) => {
 const s = StyleSheet.create({
   container: {
     marginVertical: 20,
-    paddingRight: 10,
+    paddingLeft: 15,
   },
   card: {
     height: 90,
